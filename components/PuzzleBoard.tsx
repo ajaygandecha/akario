@@ -14,28 +14,18 @@ export default function PuzzleBoard(props: {puzzle: Puzzle}) {
         // First, handle adding and removing lamps
         if (gameModel.activePuzzle.getTileType(r, c) == TileType.cooridor) {
             if (gameModel.isLamp(r, c) == false) {
-
-                console.log("Adding lamp");
-
-                newModel.addLamp(r, c);
                 
+                newModel.addLamp(r, c);
                 setGameModel((_) => newModel);
-
             } else {
 
-                console.log("Removing lamp");
-
                 gameModel.removeLamp(r, c);       
-            
                 setGameModel((_) => newModel);
             }
 
         }
 
-        console.log(gameModel);
-
         setGameModel((_) => newModel);
-
     }
 
     const gridTemplateColumnsStyle = "repeat(" + gameModel.activePuzzle.getWidth().toString() + ", minmax(0, 1fr))";

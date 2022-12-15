@@ -171,15 +171,17 @@ export default class GameModel {
           }
         }
     
+        let returnValue = true;
+
         // Now, check each lamp
         this.lampList.forEach(lampCoord => {
             if(this.isLampIllegal(lampCoord.r, lampCoord.c)) {
-                return false;
+                returnValue = false;
             }
         });
     
         // If all pass, then the puzzle is solved
-        return true;
+        return returnValue;
     }
 
     isClueSatisfied(r: number, c: number) {
@@ -231,12 +233,10 @@ export default class GameModel {
       else {
           // Check if cell is invalid
           if(this.isLamp(r, c) && this.isLampIllegal(r, c)) {
-              console.log("Invalid lamp hit");
               return TileStyleType.invalidLampStyle;
           }
           // Check if lamp
           if(this.isLamp(r, c)) {
-            console.log("lamp hit");
             return TileStyleType.lampStyle;
           }
           // Check if cell is lit
