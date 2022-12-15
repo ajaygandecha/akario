@@ -13,7 +13,7 @@ export default class Coordinate {
 
     equals(other: Coordinate) {
 
-        return this.r == other.r && this.c == other.c;
+        return this.r === other.r && this.c === other.c;
     }
 
     getAdjacentCoordinatesForPuzzle(p: Puzzle) {
@@ -113,11 +113,15 @@ export default class Coordinate {
 
     static coordListContainsItem(li: Coordinate[], coord: Coordinate) {
 
+       
         li.forEach(pc => {
             if(pc.equals(coord)) {
                 return true;
             }
         })
+
+        console.log("here??");
+        
         return false;
     }
 
