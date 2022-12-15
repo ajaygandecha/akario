@@ -18,7 +18,7 @@ export default function PuzzleBoard() {
 
                 newModel.addLamp(r, c);
                 
-                setGameModel((previous) => newModel);
+                setGameModel((_) => newModel);
 
             } else {
 
@@ -26,7 +26,7 @@ export default function PuzzleBoard() {
 
                 gameModel.removeLamp(r, c);       
             
-                setGameModel((previous) => newModel);
+                setGameModel((_) => newModel);
             }
 
         }

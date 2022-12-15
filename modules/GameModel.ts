@@ -53,7 +53,7 @@ export default class GameModel {
     lampList: Coordinate[];
 
     constructor() {
-        this.activePuzzle = SamplePuzzles.puzzle_four;
+        this.activePuzzle = SamplePuzzles.puzzle_two;
         this.lampList = [];
     }
 
@@ -97,20 +97,15 @@ export default class GameModel {
         if(this.lampList.findIndex((element) => element.r === r && element.c === c) !== -1) {
           return true;
         }
-        // if (Coordinate.coordListContainsItem(this.lampList, new Coordinate(r, c))) {
-        //   return true;
-        // }
     
         let allLit: Coordinate[] = [];
 
         this.lampList.forEach(lampCoord => {
 
-          //console.log(lampCoord.getCoordinatesInViewForPuzzle(this.activePuzzle));
           allLit = allLit.concat(lampCoord.getCoordinatesInViewForPuzzle(this.activePuzzle));
         });
 
         return allLit.findIndex((element) => element.r === r && element.c === c) !== -1;
-        //return Coordinate.coordListContainsItem(allLit, new Coordinate(r, c));
     }
 
     isLamp(r: number, c: number) {
@@ -120,7 +115,6 @@ export default class GameModel {
         }
 
         let val = this.lampList.findIndex((element) => element.r === r && element.c === c) !== -1;
-        //Coordinate.coordListContainsItem(this.lampList, new Coordinate(r, c));
         
         return val;
     }
@@ -128,11 +122,6 @@ export default class GameModel {
     isLampIllegal(r: number, c: number) {
 
         let lampCoordinate:Coordinate = new Coordinate(r, c);
-
-        // if (this.activePuzzle.getTileType(r, c) != TileType.cooridor
-        //     || !Coordinate.coordListContainsItem(this.lampList, lampCoordinate)) {
-        //   throw new Error("Illegal argument in isLampIllegal");
-        // }
     
         if(this.activePuzzle.getTileType(r, c) != TileType.cooridor
             || this.lampList.findIndex((element) => element.r === r && element.c === c) === -1) {
@@ -142,9 +131,6 @@ export default class GameModel {
     
         let returnValue = false;
         litFromLamp.forEach(coord => {
-            // if(Coordinate.coordListContainsItem(this.lampList, coord)) {
-            //     return true;
-            // }
             if(this.lampList.findIndex((element) => element.r === coord.r && element.c === coord.c) !== -1) {
               returnValue = true;
             }
