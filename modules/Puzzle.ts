@@ -42,5 +42,5 @@ export default class Puzzle {
     
         return this.board[r][c];
       }
-    
+  
 }
