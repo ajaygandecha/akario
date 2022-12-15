@@ -33,35 +33,27 @@ export default function PuzzleBoard() {
 
         console.log(gameModel);
 
-        setGameModel((previous) => newModel);
+        setGameModel((_) => newModel);
 
     }
 
     const gridTemplateColumnsStyle = "repeat(" + gameModel.activePuzzle.getWidth().toString() + ", minmax(0, 1fr))";
 
     return(
-        <>
-            {
-                (gameModel.isSolved()) ? <p>Solved</p> : (
-                    <div className="bg-slate-400 p-2 sm:w-7/12 md:w-5/12 lg:w-3/12">
-                        <div className={"grid gap-2"} style={{gridTemplateColumns : gridTemplateColumnsStyle}}>
-
-                            {(()=>{
-                                const tileArray = [];
-                                for(let r = 0; r < gameModel.activePuzzle.getHeight(); r++) {
-                                    for(let c = 0; c < gameModel.activePuzzle.getWidth(); c++) {
-                                        tileArray.push(
-                                            <Tile key={r.toString() + c.toString()} model={gameModel} r={r} c={c} action={() => handleTilePress(r,c)}/>
-                                        );
-                                    }
-                                }
-                                return tileArray;
-                            })()}
-
-                        </div>
-                    </div>
-                )
-            }
-        </>
+        <div className="bg-slate-400 p-2 sm:w-7/12 md:w-5/12 lg:w-3/12">
+            <div className={"grid gap-2"} style={{gridTemplateColumns : gridTemplateColumnsStyle}}>
+                {(()=>{
+                    const tileArray = [];
+                    for(let r = 0; r < gameModel.activePuzzle.getHeight(); r++) {
+                        for(let c = 0; c < gameModel.activePuzzle.getWidth(); c++) {
+                            tileArray.push(
+                                <Tile key={r.toString() + c.toString()} model={gameModel} r={r} c={c} action={() => handleTilePress(r,c)}/>
+                            );
+                        }
+                    }
+                    return tileArray;
+                })()}
+            </div>
+        </div>
     );
 }

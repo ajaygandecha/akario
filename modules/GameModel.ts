@@ -202,6 +202,14 @@ export default class GameModel {
     tileStyleType(r: number, c: number) {
       let tileType = this.activePuzzle.getTileType(r, c);
 
+      if(tileType == TileType.cooridor && this.isSolved() && this.isLamp(r, c)) {
+        return TileStyleType.solvedCooridorLampStyle;
+      }
+
+      if(tileType == TileType.cooridor && this.isSolved()) {
+        return TileStyleType.solvedCooridorStyle;
+      }
+
       // Determine result based on the type:
       if(tileType == TileType.wall) {
           return TileStyleType.wallStyle;
@@ -256,4 +264,7 @@ export const TileStyleType = {
   lampStyle: 4,
   invalidLampStyle: 5,
   cooridorStyle: 6,
+  solvedCooridorStyle: 7,
+  solvedCooridorLampStyle: 8
+
 }; 

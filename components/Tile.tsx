@@ -19,6 +19,10 @@ export default function Tile(props: {model: GameModel, r: number, c: number, act
             return(<div className={"bg-black aspect-square text-teal-400 flex  justify-center content-center flex-col text-center"} onClick={props.action}>{props.model.clueText(props.r, props.c)}</div>);
         case TileStyleType.wallStyle:
             return(<div className={"bg-black aspect-square flex  justify-center content-center flex-col text-center"} onClick={props.action}>{props.model.clueText(props.r, props.c)}</div>);
+        case TileStyleType.solvedCooridorStyle:
+            return(<div className={"bg-teal-400 aspect-square text-white flex justify-center content-center flex-col text-center"} onClick={props.action}>{props.model.clueText(props.r, props.c)}</div>);    
+        case TileStyleType.solvedCooridorLampStyle:
+            return(<div className={"bg-teal-400 aspect-square text-white flex justify-center content-center flex-col text-center"} onClick={props.action}>*</div>);
         default:
             return(<div className={"bg-white aspect-square text-white flex justify-center content-center flex-col text-center"} onClick={props.action}>{props.model.clueText(props.r, props.c)}</div>);
     }
