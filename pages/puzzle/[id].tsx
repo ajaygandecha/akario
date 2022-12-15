@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ClueStyleTile, CooridorStyleTile, InvalidLampStyleTile, LampStyleTile, LitStyleTile, SatisfiedClueStyleTile, TileType, WallStyleTile } from "../../components/Tile";
+import Tile, { ClueStyleTile, CooridorStyleTile, InvalidLampStyleTile, LampStyleTile, LitStyleTile, SatisfiedClueStyleTile, TileType, WallStyleTile } from "../../components/Tile";
 import { useRouter } from "next/router";
 import GameModel, { TileStyleType } from "../../modules/GameModel";
 
@@ -178,7 +178,63 @@ export default function PuzzleView() {
                     {/* Puzzle Container */}
                     <div className="bg-slate-400 p-2 sm:w-7/12 md:w-5/12 lg:w-3/12 aspect-square">
                         <div className="grid grid-cols-7 gap-2">
-                        {
+                            <Tile model={gameModel} r={0} c={0} action={() => handleTilePress(0,0)}/>
+                            <Tile model={gameModel} r={0} c={1} action={() => handleTilePress(0,1)}/>
+                            <Tile model={gameModel} r={0} c={2} action={() => handleTilePress(0,2)}/>
+                            <Tile model={gameModel} r={0} c={3} action={() => handleTilePress(0,3)}/>
+                            <Tile model={gameModel} r={0} c={4} action={() => handleTilePress(0,4)}/>
+                            <Tile model={gameModel} r={0} c={5} action={() => handleTilePress(0,5)}/>
+                            <Tile model={gameModel} r={0} c={6} action={() => handleTilePress(0,6)}/>
+
+                            <Tile model={gameModel} r={1} c={0} action={() => handleTilePress(1,0)}/>
+                            <Tile model={gameModel} r={1} c={1} action={() => handleTilePress(1,1)}/>
+                            <Tile model={gameModel} r={1} c={2} action={() => handleTilePress(1,2)}/>
+                            <Tile model={gameModel} r={1} c={3} action={() => handleTilePress(1,3)}/>
+                            <Tile model={gameModel} r={1} c={4} action={() => handleTilePress(1,4)}/>
+                            <Tile model={gameModel} r={1} c={5} action={() => handleTilePress(1,5)}/>
+                            <Tile model={gameModel} r={1} c={6} action={() => handleTilePress(1,6)}/>
+
+                            <Tile model={gameModel} r={2} c={0} action={() => handleTilePress(2,0)}/>
+                            <Tile model={gameModel} r={2} c={1} action={() => handleTilePress(2,1)}/>
+                            <Tile model={gameModel} r={2} c={2} action={() => handleTilePress(2,2)}/>
+                            <Tile model={gameModel} r={2} c={3} action={() => handleTilePress(2,3)}/>
+                            <Tile model={gameModel} r={2} c={4} action={() => handleTilePress(2,4)}/>
+                            <Tile model={gameModel} r={2} c={5} action={() => handleTilePress(2,5)}/>
+                            <Tile model={gameModel} r={2} c={6} action={() => handleTilePress(2,6)}/>
+
+                            <Tile model={gameModel} r={3} c={0} action={() => handleTilePress(3,0)}/>
+                            <Tile model={gameModel} r={3} c={1} action={() => handleTilePress(3,1)}/>
+                            <Tile model={gameModel} r={3} c={2} action={() => handleTilePress(3,2)}/>
+                            <Tile model={gameModel} r={3} c={3} action={() => handleTilePress(3,3)}/>
+                            <Tile model={gameModel} r={3} c={4} action={() => handleTilePress(3,4)}/>
+                            <Tile model={gameModel} r={3} c={5} action={() => handleTilePress(3,5)}/>
+                            <Tile model={gameModel} r={3} c={6} action={() => handleTilePress(3,6)}/>
+
+                            <Tile model={gameModel} r={4} c={0} action={() => handleTilePress(4,0)}/>
+                            <Tile model={gameModel} r={4} c={1} action={() => handleTilePress(4,1)}/>
+                            <Tile model={gameModel} r={4} c={2} action={() => handleTilePress(4,2)}/>
+                            <Tile model={gameModel} r={4} c={3} action={() => handleTilePress(4,3)}/>
+                            <Tile model={gameModel} r={4} c={4} action={() => handleTilePress(4,4)}/>
+                            <Tile model={gameModel} r={4} c={5} action={() => handleTilePress(4,5)}/>
+                            <Tile model={gameModel} r={4} c={6} action={() => handleTilePress(4,6)}/>
+
+                            <Tile model={gameModel} r={5} c={0} action={() => handleTilePress(5,0)}/>
+                            <Tile model={gameModel} r={5} c={1} action={() => handleTilePress(5,1)}/>
+                            <Tile model={gameModel} r={5} c={2} action={() => handleTilePress(5,2)}/>
+                            <Tile model={gameModel} r={5} c={3} action={() => handleTilePress(5,3)}/>
+                            <Tile model={gameModel} r={5} c={4} action={() => handleTilePress(5,4)}/>
+                            <Tile model={gameModel} r={5} c={5} action={() => handleTilePress(5,5)}/>
+                            <Tile model={gameModel} r={5} c={6} action={() => handleTilePress(5,6)}/>
+
+                            <Tile model={gameModel} r={6} c={0} action={() => handleTilePress(6,0)}/>
+                            <Tile model={gameModel} r={6} c={1} action={() => handleTilePress(6,1)}/>
+                            <Tile model={gameModel} r={6} c={2} action={() => handleTilePress(6,2)}/>
+                            <Tile model={gameModel} r={6} c={3} action={() => handleTilePress(6,3)}/>
+                            <Tile model={gameModel} r={6} c={4} action={() => handleTilePress(6,4)}/>
+                            <Tile model={gameModel} r={6} c={5} action={() => handleTilePress(6,5)}/>
+                            <Tile model={gameModel} r={6} c={6} action={() => handleTilePress(6,6)}/>
+
+                        {/* {
                             (gameModel.tileStyleType(0,0) === TileStyleType.clueStyle) ? <div className={"bg-black aspect-square text-white flex justify-center content-center flex-col text-center"} onClick={() => { handleTilePress(0, 0)}}>{ gameModel.clueText(0, 0) }</div> :
                             (
                                 (gameModel.tileStyleType(0,0) === TileStyleType.cooridorStyle) ? <div className={"bg-white aspect-square text-white flex justify-center content-center flex-col text-center"} onClick={() => { handleTilePress(0, 0)}}>{ gameModel.clueText(0, 0) }</div> : (
@@ -195,8 +251,8 @@ export default function PuzzleView() {
                                     )
                                 )
                             )
-                        }
-                        {   
+                        } */}
+                        {/* {   
                             (gameModel.tileStyleType(0,1) === TileStyleType.clueStyle) ? <div className={"bg-black aspect-square text-white flex justify-center content-center flex-col text-center"} onClick={() => { handleTilePress(0, 1)}}>{ gameModel.clueText(0, 1) }</div> :
                             (
                                 (gameModel.tileStyleType(0,1) === TileStyleType.cooridorStyle) ? <div style={{backgroundColor: "rgb(255 255 255)", aspectRatio: "1", color: "rgb(255 255 255)", justifyContent: "center", alignContent: "center", flexDirection: "column", textAlign: "center"}} onClick={() => { handleTilePress(0, 1)}}>{ gameModel.clueText(0, 1) }</div> : (
@@ -713,7 +769,7 @@ export default function PuzzleView() {
                         (gameModel.tileStyleType(6,6) === TileStyleType.satisfiedClueStyle) ? <div className={"bg-black aspect-square text-teal-400 flex justify-center content-center flex-col text-center"} onClick={() => { handleTilePress(6, 6)}}>{ gameModel.clueText(6, 6) }</div> : (
                         (gameModel.tileStyleType(6,6) === TileStyleType.wallStyle) ? <div className={"bg-black aspect-square"}></div> : (
                                                                                                  <div className={"bg-white aspect-square text-white flex justify-center content-center flex-col text-center"} onClick={() => { handleTilePress(6, 6)}}>{ gameModel.clueText(6, 6) }</div>)))))))
-                        }      
+                        }       */}
 
                             {/* {
                             (gameModel.tileStyleType(0,0) === TileStyleType.clueStyle) ? <ClueStyleTile /> :
