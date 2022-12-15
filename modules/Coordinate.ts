@@ -1,5 +1,5 @@
 import Tile, { TileType } from "../components/Tile";
-import Puzzle from "./Puzzle";
+import Puzzle from "./PuzzleWrapper";
 
 export default class Coordinate {
 

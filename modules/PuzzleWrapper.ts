@@ -1,11 +1,26 @@
+import { Puzzle } from "@prisma/client";
 import { TileType } from "../components/Tile";
 
-export default class Puzzle {
+export default class PuzzleWrapper {
 
     board: number[][];
 
-    constructor(board: number[][]) {
-        this.board = board;
+    constructor(puzzle: Puzzle) {
+        //this.board = board;
+
+        let grid:number[][] = []; 
+
+        const stringPuzzleLayout = puzzle.boardLayout.split(",");
+        const numberPuzzleLayout: number[] = [];
+        
+        stringPuzzleLayout.forEach((strElement) => numberPuzzleLayout.push(parseInt(strElement)));
+
+        while(numberPuzzleLayout.length) {
+          grid.push(numberPuzzleLayout.splice(0, puzzle.width));
+        }
+
+        this.board = grid;
+        
     }
 
     getWidth() {

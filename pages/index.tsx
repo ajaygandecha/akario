@@ -1,5 +1,11 @@
+import { PrismaClient, Puzzle } from "@prisma/client";
+import { GetStaticProps, NextPage } from "next";
 
-export default function Home() {
+interface PuzzleProps {
+  puzzles: Puzzle[];
+}
+
+export default function Home({puzzles}: PuzzleProps) {
 
   let today = new Date();
   let dd = String(today.getDate()).padStart(2, '0');
@@ -7,7 +13,6 @@ export default function Home() {
   let yyyy = today.getFullYear();
 
   let dateString = mm + '/' + dd + '/' + yyyy;
-
 
   return (
     <div className="h-screen bg-slate-100 dark:bg-slate-800">
@@ -35,4 +40,14 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+
+  const prisma = new PrismaClient();
+  const puzzles = await prisma.puzzle.findMany();
+
+  return {
+    props : { puzzles }
+  };
 }

@@ -1,14 +1,15 @@
+import { Puzzle } from "@prisma/client";
 import { useState } from "react";
 import GameModel from "../modules/GameModel";
 import Tile, { TileType } from "./Tile";
 
-export default function PuzzleBoard() {
+export default function PuzzleBoard(props: {puzzle: Puzzle}) {
 
-    const [gameModel, setGameModel] = useState(new GameModel());
+    const [gameModel, setGameModel] = useState(new GameModel(props.puzzle));
 
     function handleTilePress(r: number, c: number) {
         
-        let newModel = Object.assign(new GameModel(), gameModel);
+        let newModel = Object.assign(new GameModel(props.puzzle), gameModel);
 
         // First, handle adding and removing lamps
         if (gameModel.activePuzzle.getTileType(r, c) == TileType.cooridor) {

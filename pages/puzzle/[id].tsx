@@ -1,11 +1,19 @@
+import { PrismaClient, Puzzle } from "@prisma/client";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { idText } from "typescript";
 import PuzzleBoard from "../../components/PuzzleBoard";
 
-export default function PuzzleView() {
+interface PuzzleProps {
+    puzzles: Puzzle[];
+  }
+
+export default function PuzzleView({puzzles}: PuzzleProps) {
 
     const router = useRouter();
     const { id } = router.query;
-    
+
     return (
         <div className="h-screen bg-slate-100 dark:bg-slate-800">
 
@@ -20,7 +28,7 @@ export default function PuzzleView() {
             <main>
                 <div className="flex items-center justify-center mt-8">
                     {/* Puzzle Container */}
-                    <PuzzleBoard/>
+                    <PuzzleBoard puzzle={puzzles.filter(puzzle => puzzle.id.toString() === id)[0]}/>
                 </div>
             </main>
 
@@ -31,3 +39,21 @@ export default function PuzzleView() {
         </div>
     )
 }
+
+export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
+
+    return {
+        paths: [], //indicates that no page needs be created at build time
+        fallback: 'blocking' //indicates the type of fallback
+    }
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+
+    const prisma = new PrismaClient();
+    const puzzles = await prisma.puzzle.findMany();
+  
+    return {
+      props : { puzzles }
+    };
+  }

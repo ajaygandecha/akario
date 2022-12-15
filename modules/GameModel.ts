@@ -1,10 +1,12 @@
+import { Puzzle } from "@prisma/client";
 import Tile, { TileType } from "../components/Tile";
 import Coordinate from "./Coordinate";
-import Puzzle from "./Puzzle";
+import PuzzleWrapper from "./PuzzleWrapper";
 
+/*
 export const SamplePuzzles = {
 
-  puzzle_one: new Puzzle([
+  puzzle_one: new PuzzleWrapper([
     [6, 6, 6, 6, 1, 6, 6],
     [6, 6, 6, 5, 6, 6, 6],
     [0, 6, 6, 6, 6, 6, 6],
@@ -14,7 +16,7 @@ export const SamplePuzzles = {
     [6, 6, 5, 6, 6, 6, 6]
   ]),
 
-  puzzle_two: new Puzzle([
+  puzzle_two: new PuzzleWrapper([
     [6, 6, 5, 6, 6, 6],
     [6, 5, 6, 6, 6, 3],
     [6, 6, 6, 6, 6, 6],
@@ -24,7 +26,7 @@ export const SamplePuzzles = {
     [6, 6, 6, 6, 0, 6],
   ]),
 
-  puzzle_three: new Puzzle([
+  puzzle_three: new PuzzleWrapper([
     [6, 6, 5, 6, 6, 6, 6],
     [6, 5, 6, 6, 6, 4, 6],
     [6, 6, 6, 6, 6, 6, 5],
@@ -34,7 +36,7 @@ export const SamplePuzzles = {
     [6, 6, 6, 6, 0, 6, 6],
   ]),
 
-  puzzle_four: new Puzzle([
+  puzzle_four: new PuzzleWrapper([
     [5, 6, 6, 5, 6, 6, 6, 6, 6, 5],
     [6, 6, 6, 6, 6, 6, 6, 5, 6, 6],
     [6, 3, 6, 6, 6, 6, 0, 6, 6, 6],
@@ -47,13 +49,15 @@ export const SamplePuzzles = {
     [0, 6, 6, 6, 6, 6, 1, 6, 6, 0],
   ]),
 }
+*/
+
 export default class GameModel {
 
-    activePuzzle: Puzzle;
+    activePuzzle: PuzzleWrapper;
     lampList: Coordinate[];
 
-    constructor() {
-        this.activePuzzle = SamplePuzzles.puzzle_two;
+    constructor(puzzle: Puzzle) {
+        this.activePuzzle = new PuzzleWrapper(puzzle);
         this.lampList = [];
     }
 
@@ -267,4 +271,4 @@ export const TileStyleType = {
   solvedCooridorStyle: 7,
   solvedCooridorLampStyle: 8
 
-}; 
+};
