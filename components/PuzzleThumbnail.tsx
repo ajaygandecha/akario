@@ -1,11 +1,12 @@
 import { Puzzle } from "@prisma/client";
 import { useState } from "react";
+import Coordinate from "../modules/Coordinate";
 import GameModel from "../modules/GameModel";
 import PuzzleWrapper from "../modules/PuzzleWrapper";
 import Tile, { TileType } from "./Tile";
 import TileThumbnail from "./TileThumbnail";
 
-export default function PuzzleThumbnail(props: {puzzle: Puzzle}) {
+export default function PuzzleThumbnail(props: {puzzle: Puzzle, userDataForPuzzle: Coordinate[]}) {
 
     const puzzle = new PuzzleWrapper(props.puzzle);
 
@@ -19,7 +20,7 @@ export default function PuzzleThumbnail(props: {puzzle: Puzzle}) {
                     for(let r = 0; r < puzzle.getHeight(); r++) {
                         for(let c = 0; c < puzzle.getWidth(); c++) {
                             tileArray.push(
-                                <TileThumbnail key={r.toString() + c.toString()} model={new GameModel(props.puzzle)} r={r} c={c}/>
+                                <TileThumbnail key={r.toString() + c.toString()} model={new GameModel(props.puzzle, props.userDataForPuzzle)} r={r} c={c}/>
                             );
                         }
                     }

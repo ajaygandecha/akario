@@ -1,8 +1,10 @@
 import { PrismaClient, Puzzle } from "@prisma/client";
 import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import PuzzleThumbnail from "../components/PuzzleThumbnail";
 import PuzzleThumbnailTile from "../components/PuzzleThumbnailTile";
+import UserDataManager, { UserData } from "../modules/UserData";
 
 interface PuzzleProps {
   puzzles: Puzzle[];
@@ -10,8 +12,16 @@ interface PuzzleProps {
 
 export default function Home({puzzles}: PuzzleProps) {
 
+  const [userDataRef, setUserDataRef] = useState<UserData | null>();
+
+  useEffect(() => {
+    setUserDataRef(UserDataManager.getUserData());
+  }, []);
+
   return (
-    <div className="h-screen bg-slate-100 dark:bg-slate-800">
+    <>
+    { (userDataRef != null) ? (
+      <div className="h-screen bg-slate-100 dark:bg-slate-800">
       {/* Header */}
       <header className="">
         <h1 className="text-center font-mono font-bold text-5xl pt-8">
@@ -32,7 +42,7 @@ export default function Home({puzzles}: PuzzleProps) {
         {
           (puzzles.filter((puzzle) => puzzle.difficulty === 1)).map((puzzle) => 
             <Link className="inline-block ml-6" href={"/puzzle/" + puzzle.id.toString()}>
-              <PuzzleThumbnailTile puzzle={puzzle} puzzleID={puzzle.id} difficulty={puzzle.difficulty} />
+              <PuzzleThumbnailTile puzzle={puzzle} puzzleID={puzzle.id} difficulty={puzzle.difficulty} userDataForPuzzle={UserDataManager.getDataForPuzzleFromUserData(userDataRef, puzzle.id)} />
             </Link>
           )
         }
@@ -46,14 +56,14 @@ export default function Home({puzzles}: PuzzleProps) {
         {
           (puzzles.filter((puzzle) => puzzle.difficulty === 2)).map((puzzle) => 
             <Link className="inline-block ml-6" href={"/puzzle/" + puzzle.id.toString()}>
-              <PuzzleThumbnailTile puzzle={puzzle} puzzleID={puzzle.id} difficulty={puzzle.difficulty} />
+              <PuzzleThumbnailTile puzzle={puzzle} puzzleID={puzzle.id} difficulty={puzzle.difficulty} userDataForPuzzle={UserDataManager.getDataForPuzzleFromUserData(userDataRef, puzzle.id)} />
             </Link>
           )
         }
         </div>
 
         <div className="flex items-center justify-center">
-        <em className="font-mono text-center">Hard (14x14) puzzles coming soon!</em>
+          <em className="font-mono text-center">Hard (14x14) puzzles coming soon!</em>
         </div>
 
       </main>
@@ -61,7 +71,11 @@ export default function Home({puzzles}: PuzzleProps) {
       <footer className="">
         <p className="text-center font-mono">Copyright 2022 Ajay Gandecha</p>
       </footer>
-    </div>
+      </div>
+    ) : (
+      <p>Loading...</p>
+    )}
+    </>
   )
 }
 

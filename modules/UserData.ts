@@ -38,11 +38,8 @@ export default class UserDataManager {
     static getDataForPuzzle(id: number): Coordinate[] {
         let userData = this.getUserData();
         if(id in userData) {
-
             let coordList: Coordinate[] = [];
-
             userData[id].forEach((c) => coordList.push(new Coordinate(c.r, c.c)));
-
             return coordList;
         }
         else {
@@ -58,5 +55,17 @@ export default class UserDataManager {
         
         userData[id] = data;
         this.updateUserData(userData);
+    }
+
+    static getDataForPuzzleFromUserData(userData: UserData, id: number): Coordinate[] {
+        
+        if(id in userData) {
+            let coordList: Coordinate[] = [];
+            userData[id].forEach((c) => coordList.push(new Coordinate(c.r, c.c)));
+            return coordList;
+        }
+        else {
+            return [];
+        }
     }
 }
