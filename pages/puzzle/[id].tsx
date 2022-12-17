@@ -1,5 +1,6 @@
 import { PrismaClient, Puzzle } from "@prisma/client";
 import { GetStaticPaths, GetStaticProps } from "next";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import PuzzleBoard from "../../components/PuzzleBoard";
 
@@ -18,9 +19,12 @@ export default function PuzzleView({puzzles}: PuzzleProps) {
 
             {/* Header */}
             <header className="">
-                <h1 className="text-center font-mono font-bold text-2xl pt-8">
-                    Puzzle #{id}
-                </h1>
+            <Link className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded absolute top-4 right-4 border-b-4 border-r-4 border-red-700 hover:border-red-500" href={"/"}>
+                X
+            </Link>
+            <h1 className="text-center font-mono font-bold text-2xl pt-8">
+                Puzzle #{id}
+            </h1>
             </header>
 
             {/* Main content */}

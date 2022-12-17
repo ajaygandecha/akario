@@ -56,9 +56,9 @@ export default class GameModel {
     activePuzzle: PuzzleWrapper;
     lampList: Coordinate[];
 
-    constructor(puzzle: Puzzle) {
+    constructor(puzzle: Puzzle, lampList: Coordinate[] = []) {
         this.activePuzzle = new PuzzleWrapper(puzzle);
-        this.lampList = [];
+        this.lampList = lampList;
     }
 
     addLamp(r: number, c: number) {

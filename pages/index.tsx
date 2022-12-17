@@ -1,5 +1,8 @@
 import { PrismaClient, Puzzle } from "@prisma/client";
 import { GetStaticProps, NextPage } from "next";
+import Link from "next/link";
+import PuzzleThumbnail from "../components/PuzzleThumbnail";
+import PuzzleThumbnailTile from "../components/PuzzleThumbnailTile";
 
 interface PuzzleProps {
   puzzles: Puzzle[];
@@ -7,32 +10,52 @@ interface PuzzleProps {
 
 export default function Home({puzzles}: PuzzleProps) {
 
-  let today = new Date();
-  let dd = String(today.getDate()).padStart(2, '0');
-  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  let yyyy = today.getFullYear();
-
-  let dateString = mm + '/' + dd + '/' + yyyy;
-
   return (
     <div className="h-screen bg-slate-100 dark:bg-slate-800">
       {/* Header */}
       <header className="">
         <h1 className="text-center font-mono font-bold text-5xl pt-8">
-          Akari
+          AKARI
         </h1>
       </header>
       {/* Main content */}
       <main>
-        <h2 className="text-center font-mono font-bold text-2xl">
-          Daily Puzzle
-        </h2>
-        <h3 className="text-center font-mono font-bold text-xl">
-          {dateString}
-        </h3>
-        <h2 className="text-center font-mono font-bold text-2xl">
+
+        <h2 className="text-center font-mono font-bold text-3xl">
           Puzzle Library
         </h2>
+        <h3 className="text-center font-mono font-bold text-2xl">
+          Easy (7x7)
+        </h3>
+
+        <div className="overflow-x-scroll overflow-y-hidden whitespace-nowrap pt-10 pb-10">
+        {
+          (puzzles.filter((puzzle) => puzzle.difficulty === 1)).map((puzzle) => 
+            <Link className="inline-block ml-6" href={"/puzzle/" + puzzle.id.toString()}>
+              <PuzzleThumbnailTile puzzle={puzzle} puzzleID={puzzle.id} difficulty={puzzle.difficulty} />
+            </Link>
+          )
+        }
+        </div>
+
+        <h3 className="text-center font-mono font-bold text-2xl">
+          Medium (10x10)
+        </h3>
+
+        <div className="overflow-x-scroll overflow-y-hidden whitespace-nowrap pt-10 pb-10">
+        {
+          (puzzles.filter((puzzle) => puzzle.difficulty === 2)).map((puzzle) => 
+            <Link className="inline-block ml-6" href={"/puzzle/" + puzzle.id.toString()}>
+              <PuzzleThumbnailTile puzzle={puzzle} puzzleID={puzzle.id} difficulty={puzzle.difficulty} />
+            </Link>
+          )
+        }
+        </div>
+
+        <div className="flex items-center justify-center">
+        <em className="font-mono text-center">Hard (14x14) puzzles coming soon!</em>
+        </div>
+
       </main>
       {/* Footer */}
       <footer className="">
