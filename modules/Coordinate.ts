@@ -113,14 +113,11 @@ export default class Coordinate {
 
     static coordListContainsItem(li: Coordinate[], coord: Coordinate) {
 
-       
         li.forEach(pc => {
             if(pc.equals(coord)) {
                 return true;
             }
         })
-
-        console.log("here??");
         
         return false;
     }

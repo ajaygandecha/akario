@@ -14,7 +14,6 @@ export default class UserDataManager {
 
             if(storageData != null) {
                 let userData = JSON.parse(storageData) as UserData;
-                console.log(userData);
                 return userData;
             } 
             else {
@@ -50,8 +49,6 @@ export default class UserDataManager {
     static setDataForPuzzle(id: number, data: Coordinate[]) {
         
         let userData = this.getUserData();
-
-        console.log(userData);
         
         userData[id] = data;
         this.updateUserData(userData);
