@@ -2,10 +2,7 @@ import { PrismaClient, Puzzle } from "@prisma/client";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import PuzzleBoard from "../../components/PuzzleBoard";
-import GameModel from "../../modules/GameModel";
-import UserDataManager, { UserData } from "../../modules/UserData";
 
 interface PuzzleProps {
     puzzles: Puzzle[];
@@ -15,12 +12,6 @@ export default function PuzzleView({puzzles}: PuzzleProps) {
 
     const router = useRouter();
     const { id } = router.query;
-
-    const [userDataRef, setUserDataRef] = useState<UserData | null>();
-
-    useEffect(() => {
-      setUserDataRef(UserDataManager.getUserData());
-    }, []);
   
     let puzzleFilter = puzzles.filter(puzzle => puzzle.id.toString() === id);
 

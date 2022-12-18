@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from "react";
+import React from "react";
 import GameModel, { TileStyleType } from "../modules/GameModel";
 
 export default function TileThumbnail(props: {model: GameModel, r: number, c: number}) {

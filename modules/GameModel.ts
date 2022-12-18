@@ -1,55 +1,7 @@
 import { Puzzle } from "@prisma/client";
-import Tile, { TileType } from "../components/Tile";
+import { TileType } from "../components/Tile";
 import Coordinate from "./Coordinate";
 import PuzzleWrapper from "./PuzzleWrapper";
-
-/*
-export const SamplePuzzles = {
-
-  puzzle_one: new PuzzleWrapper([
-    [6, 6, 6, 6, 1, 6, 6],
-    [6, 6, 6, 5, 6, 6, 6],
-    [0, 6, 6, 6, 6, 6, 6],
-    [6, 5, 6, 6, 6, 4, 6],
-    [6, 6, 6, 6, 6, 6, 5],
-    [6, 6, 6, 2, 6, 6, 6],
-    [6, 6, 5, 6, 6, 6, 6]
-  ]),
-
-  puzzle_two: new PuzzleWrapper([
-    [6, 6, 5, 6, 6, 6],
-    [6, 5, 6, 6, 6, 3],
-    [6, 6, 6, 6, 6, 6],
-    [6, 6, 6, 6, 6, 6],
-    [3, 6, 6, 6, 6, 6],
-    [6, 2, 6, 6, 6, 6],
-    [6, 6, 6, 6, 0, 6],
-  ]),
-
-  puzzle_three: new PuzzleWrapper([
-    [6, 6, 5, 6, 6, 6, 6],
-    [6, 5, 6, 6, 6, 4, 6],
-    [6, 6, 6, 6, 6, 6, 5],
-    [6, 6, 6, 6, 6, 6, 6],
-    [3, 6, 6, 6, 6, 6, 6],
-    [6, 2, 6, 6, 6, 5, 6],
-    [6, 6, 6, 6, 0, 6, 6],
-  ]),
-
-  puzzle_four: new PuzzleWrapper([
-    [5, 6, 6, 5, 6, 6, 6, 6, 6, 5],
-    [6, 6, 6, 6, 6, 6, 6, 5, 6, 6],
-    [6, 3, 6, 6, 6, 6, 0, 6, 6, 6],
-    [6, 6, 2, 6, 6, 5, 6, 6, 6, 1],
-    [6, 6, 6, 1, 0, 5, 6, 6, 6, 6],
-    [6, 6, 6, 6, 1, 5, 5, 6, 6, 6],
-    [5, 6, 6, 6, 2, 6, 6, 2, 6, 6],
-    [6, 6, 6, 5, 6, 6, 6, 6, 5, 6],
-    [6, 6, 1, 6, 6, 6, 6, 6, 6, 6],
-    [0, 6, 6, 6, 6, 6, 1, 6, 6, 0],
-  ]),
-}
-*/
 
 export default class GameModel {
 

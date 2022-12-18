@@ -1,8 +1,7 @@
 import { PrismaClient, Puzzle } from "@prisma/client";
-import { GetStaticProps, NextPage } from "next";
+import { GetStaticProps } from "next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import PuzzleThumbnail from "../components/PuzzleThumbnail";
 import PuzzleThumbnailTile from "../components/PuzzleThumbnailTile";
 import UserDataManager, { UserData } from "../modules/UserData";
 

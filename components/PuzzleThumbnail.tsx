@@ -1,9 +1,7 @@
 import { Puzzle } from "@prisma/client";
-import { useState } from "react";
 import Coordinate from "../modules/Coordinate";
 import GameModel from "../modules/GameModel";
 import PuzzleWrapper from "../modules/PuzzleWrapper";
-import Tile, { TileType } from "./Tile";
 import TileThumbnail from "./TileThumbnail";
 
 export default function PuzzleThumbnail(props: {puzzle: Puzzle, userDataForPuzzle: Coordinate[]}) {
