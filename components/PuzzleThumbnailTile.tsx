@@ -21,7 +21,7 @@ export default function PuzzleThumbnailTile(props: {puzzle: Puzzle, puzzleID: nu
     }
 
     return (
-        <div className="w-48 rounded overflow-hidden border-b-4 border-r-4 border-gray-500 hover:border-gray-300 bg-white">
+        <div className="w-48 rounded overflow-hidden border-t-2 border-l-2 border-b-4 border-r-4 border-gray-500 hover:border-gray-300 bg-white">
             <div className="w-full aspect-square bg-slate-50">
                 <PuzzleThumbnail puzzle={props.puzzle} userDataForPuzzle={props.userDataForPuzzle} />
             </div>

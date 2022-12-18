@@ -31,10 +31,22 @@ export default function Home({puzzles}: PuzzleProps) {
       {/* Main content */}
       <main>
 
-        <h2 className="text-center font-mono font-bold text-3xl">
+        <div className="flex justify-center items-center mt-6">
+          <p className="text-center font-mono text-lg w-9/12">
+            Welcome to AKARI!
+            <br/><br/>
+            Akari, also known as <i>Light Up</i>, is a logic puzzle game originally created by <a className="underline" href="https://www.nikoli.co.jp/en/" target="_blank" rel="noopener noreferrer"><i>Nikoli (ニコリ)</i></a>, a Japanese publisher that specializes in creating games and logic puzzles. Nikoli became prominent around the world due to the popularity of another logic puzzle game they created, <i>Sudoku</i>.
+          </p>
+        </div>
+        <h2 className="text-center font-mono font-bold text-3xl mt-6">
           Puzzle Library
         </h2>
-        <h3 className="text-center font-mono font-bold text-2xl">
+
+        <p className="text-center font-mono text-md mt-4">
+          <i>Scroll to view all the puzzles for each category!</i>
+        </p>
+
+        <h3 className="text-center font-mono font-bold text-2xl mt-4">
           Easy (7x7)
         </h3>
 
@@ -63,13 +75,40 @@ export default function Home({puzzles}: PuzzleProps) {
         </div>
 
         <div className="flex items-center justify-center">
-          <em className="font-mono text-center">Hard (14x14) puzzles coming soon!</em>
+          <em className="font-mono text-center">More puzzles, including Hard (14x14) and Insane (25x25) puzzles coming soon!</em>
         </div>
 
+        <h2 className="text-center font-mono font-bold text-3xl mt-6">
+          How to Play
+        </h2>
+
+        <div className="flex justify-center items-center mt-6">
+          <p className="text-center font-mono text-lg w-9/12">
+            Akari is a game played on a square grid that contains <b>white cooridor</b> and <b>black wall</b> cells.
+            <br/><br/>
+            By clicking on a white cell, you can place a <b>lamp</b> on the cell. Lamps illuminate all cells vertically and horizontally from themselves <i>up to black wall cells</i>.
+            <br/><br/>
+            <b>The goal of the game is to illuminate all of the white cells on the board</b> such that <i>no two lamps look at each other</i>!
+            <br/><br/>
+            In addition, certain black wall cells have a <b>number from 0-4</b> on them, which indicates the <i>number of lamps</i> that must touch that cell.
+            <br/><br/>
+            For example, a cell with a 4 must have four bulbs around it, one on each side. Cells with a 0 cannot have a bulb next to any of its sides.
+            <br/><br/>
+            Cells with no number can have any number of bulbs around them.
+          </p>
+        </div>
       </main>
       {/* Footer */}
-      <footer className="">
-        <p className="text-center font-mono">Copyright 2022 Ajay Gandecha</p>
+      <footer className="bg-black text-white p-8 mt-8">
+        <div>
+          <p className="text-left font-mono">
+          © Copyright 2022 Ajay Gandecha
+            <span className="float-right">
+              <a className="underline" href="https://github.com/ajaygandecha/akari" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            </span>
+            </p>
+        </div>
+        
       </footer>
       </div>
     ) : (
