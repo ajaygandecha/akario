@@ -2,6 +2,7 @@ import { PrismaClient, Puzzle } from "@prisma/client";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Footer from "../../components/Footer";
 import PuzzleBoard from "../../components/PuzzleBoard";
 
 /** Interface for the parameter of the `PuzzleView` component. */
@@ -52,16 +53,7 @@ export default function PuzzleView({ puzzles }: PuzzleProps) {
 
                 {/* Footer */}
                 <footer className="bg-black text-white p-8 mt-8 w-full absolute bottom-0">
-                    <div>
-                        {/* Copyright */}
-                        <p className="text-left font-mono">
-                            © Copyright 2022 Ajay Gandecha
-                            {/* GitHub Repository Link */}
-                            <span className="float-right">
-                                <a className="underline" href="https://github.com/ajaygandecha/akari" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-                            </span>
-                        </p>
-                    </div>
+                    <Footer />
                 </footer>
             </div>
         </div>

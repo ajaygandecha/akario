@@ -2,6 +2,7 @@ import { PrismaClient, Puzzle } from "@prisma/client";
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Footer from "../components/Footer";
 import PuzzleThumbnailTile from "../components/PuzzleThumbnailTile";
 import UserDataManager, { UserData } from "../modules/UserData";
 
@@ -124,16 +125,7 @@ export default function Home({ puzzles }: PuzzleProps) {
 
           {/* Footer */}
           <footer className="bg-black text-white p-8 mt-8">
-            <div>
-              {/* Copyright text */}
-              <p className="text-left font-mono">
-                © Copyright 2022 Ajay Gandecha
-                {/* GitHub link */}
-                <span className="float-right">
-                  <a className="underline" href="https://github.com/ajaygandecha/akari" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-                </span>
-              </p>
-            </div>
+            <Footer />
           </footer>
         </div>
       ) : (
