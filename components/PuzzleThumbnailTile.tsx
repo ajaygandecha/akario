@@ -53,7 +53,7 @@ export default function PuzzleThumbnailTile(props: { puzzle: Puzzle, puzzleID: n
                     {difficultyText}
                 </p>
                 {/* Puzzle progress text. */}
-                <p className={progressTextColor + " text-gray-700 text-base font-bold text-center font-mono"}>
+                <p className={progressTextColor + " text-base font-bold text-center font-mono"}>
                     {progressText}
                 </p>
             </div>
