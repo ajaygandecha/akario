@@ -50,10 +50,10 @@ export default function Home({puzzles}: PuzzleProps) {
           Easy (7x7)
         </h3>
 
-        <div className="overflow-x-scroll overflow-y-hidden whitespace-nowrap pt-10 pb-10">
+        <div className="overflow-x-scroll overflow-y-hidden whitespace-nowrap pt-10 pb-10 ml-3 mr-3">
         {
           (puzzles.filter((puzzle) => puzzle.difficulty === 1)).map((puzzle) => 
-            <Link className="inline-block ml-6" href={"/puzzle/" + puzzle.id.toString()}>
+            <Link className="inline-block ml-3 mr-3" href={"/puzzle/" + puzzle.id.toString()}>
               <PuzzleThumbnailTile puzzle={puzzle} puzzleID={puzzle.id} difficulty={puzzle.difficulty} userDataForPuzzle={UserDataManager.getDataForPuzzleFromUserData(userDataRef, puzzle.id)} />
             </Link>
           )
@@ -64,10 +64,10 @@ export default function Home({puzzles}: PuzzleProps) {
           Medium (10x10)
         </h3>
 
-        <div className="overflow-x-scroll overflow-y-hidden whitespace-nowrap pt-10 pb-10">
+        <div className="overflow-x-scroll overflow-y-hidden whitespace-nowrap pt-10 pb-10 ml-3 mr-3">
         {
           (puzzles.filter((puzzle) => puzzle.difficulty === 2)).map((puzzle) => 
-            <Link className="inline-block ml-6" href={"/puzzle/" + puzzle.id.toString()}>
+            <Link className="inline-block ml-3 mr-3" href={"/puzzle/" + puzzle.id.toString()}>
               <PuzzleThumbnailTile puzzle={puzzle} puzzleID={puzzle.id} difficulty={puzzle.difficulty} userDataForPuzzle={UserDataManager.getDataForPuzzleFromUserData(userDataRef, puzzle.id)} />
             </Link>
           )

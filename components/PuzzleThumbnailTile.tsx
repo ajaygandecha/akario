@@ -12,12 +12,15 @@ export default function PuzzleThumbnailTile(props: {puzzle: Puzzle, puzzleID: nu
     else if(props.difficulty === 3) { difficultyText = "Hard (14x14)" }
 
     let progressText = "Not Started";
+    let progressTextColor = "text-gray-700";
 
     if(props.userDataForPuzzle.length > 0) {
         progressText = "In Progress";
+        progressTextColor = "text-yellow-500";
     }
     if(new GameModel(props.puzzle, props.userDataForPuzzle).isSolved()) {
         progressText = "Solved!";
+        progressTextColor = "text-teal-500";
     }
 
     return (
@@ -32,7 +35,7 @@ export default function PuzzleThumbnailTile(props: {puzzle: Puzzle, puzzleID: nu
                 <p className="text-gray-500 text-base text-center font-mono">
                     {difficultyText}
                 </p>
-                <p className="text-gray-700 text-base font-bold text-center font-mono">
+                <p className={progressTextColor + " text-gray-700 text-base font-bold text-center font-mono"}>
                     {progressText}
                 </p>
             </div>

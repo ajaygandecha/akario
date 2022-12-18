@@ -45,6 +45,7 @@ export default function PuzzleBoard(props: {puzzle: Puzzle}) {
 
     return(
         <>
+        <div className="flex items-center justify-center mt-8">
         { (gameModel != null) ? (
             <div className="bg-slate-400 p-2 sm:w-7/12 md:w-5/12 lg:w-3/12">  
                 <div className={"grid gap-2"} style={{gridTemplateColumns : gridTemplateColumnsStyle}}>
@@ -63,7 +64,16 @@ export default function PuzzleBoard(props: {puzzle: Puzzle}) {
             </div>
             ) : (<p>Loading...</p>) 
         }
+        </div>
+        <div className="mt-8">
+            { (gameModel != null && gameModel.isSolved()) ? (
+                <div className="text-center">
+                    <p className="font-bold font-mono text-xl text-teal-500">CONGRATULATIONS!</p>
+                    <br/>
+                    <p className="font-semibold font-mono text-lg text-teal-500">You solved the puzzle.</p>
+                </div>
+            ) : (<></>)}
+        </div>
         </>
-        
     );
 }
