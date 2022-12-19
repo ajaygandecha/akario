@@ -6,11 +6,9 @@
 
 Akario is hosted using Vercel and is **available now** to play at [https://akario-ajaygandecha.vercel.app](https://akario-ajaygandecha.vercel.app)!
 
-## Screenshots
+## Technologies and Approach
 
-## Technologies
-
-For this project, I used 
+Part of my goal for this project was to employ the full-stack development tools and technologies heavily used as standard in industry. I wanted the project to be typesafe, streamlined, and fully integrated together. With this goal in mind, I employed the following technologies into my project:
 
 ## Current Status
 
