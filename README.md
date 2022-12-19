@@ -8,16 +8,9 @@ Akario is hosted using Vercel and is **available now** to play at [https://akari
 
 ## Screenshots
 
-`![Writing](https://unsplash.com/photos/VBPzRgd7gfc)`
-
-Picture by [Kelly Sikkema](https://unsplash.com/@kellysikkema)
-
 ## Technologies
 
 For this project, I used 
-
-## Approach
-I adopted the `BEM` naming style for my css class names and ...
 
 ## Current Status
 
