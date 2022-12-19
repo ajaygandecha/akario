@@ -20,7 +20,25 @@ Next.js is a frontend framework built on the React library that enables rich fea
 
 Next.js has become an [industry standard](https://nextjs.org/showcase), with companies such as Twitch, Hulu, Target, Notion, Nike, and more utiziling it. I wanted to gain more experience developing with Next.js, so I decided to use it in this project.
 
+![React](https://img.shields.io/badge/-React.js-05122A?style=flat&logo=react)
 
+React is an extremely powerful framework for creating fully functional user interfaces and UI components. React is automatically built into Next.js, so I used React to create all of the UI in Akario.
+
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-05122A?style=flat&logo=tailwindcss)
+
+Tailwind CSS is a CSS framework that makes designing user interfaces extremely easy. Instead of having a bunch of CSS classes and files littered throughout the project, Tailwind CSS creates a bunch of classes for every possible style that can be applied to HTML and React components. Then at build time, only the necessary CSS classes are included in the final app, reducing the final bundle size.
+
+![Prisma](https://img.shields.io/badge/-Prisma-05122A?style=flat&logo=prisma)
+
+Prisma is a very powerful and easy-to-use ORM that allows Next.js projects to connect to external databases. Prisma abstracts away SQL queries, and instead, allows data to be queried and accessed using TypeScript.
+
+![PlanetScale](https://img.shields.io/badge/-PlanetScale-05122A?style=flat&logo=planetscale)
+
+PlanetScale is the database hosting of choice for this project. PlanetScale is a MySQL database which connects very easily to Next.js projects using Prisma. PlanetScale also allows database branching, which is a pretty cool way to test changes without immediately making changes to deployment.
+
+![Vercel](https://img.shields.io/badge/-Vercel-05122A?style=flat&logo=vercel)
+
+Vercel, the company behind Next.js, also offers hosting. I used Vercel to host this particular project.
 
 ## Current Status
 
