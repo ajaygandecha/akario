@@ -50,7 +50,3 @@ Contributors:
 
 Akario is heavily based on the original logic puzzle, *Akari*, created by Nikoli:
 - [Nikoli](https://www.nikoli.co.jp/en/)
-
-## License
-
-<< LISCENCE HERE >>
