@@ -13,7 +13,7 @@ export default function Footer() {
                 Created by Ajay Gandecha - 2022
                 {/* Version */}
                 <span className=" float-left">
-                    v0.1
+                    v1.0.0
                 </span>
                 {/* GitHub Repository Link */}
                 <span className="float-right">
