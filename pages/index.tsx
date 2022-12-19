@@ -36,7 +36,7 @@ export default function Home({ puzzles }: PuzzleProps) {
           <header className="">
             {/* Header Text */}
             <h1 className="text-center font-mono font-bold text-5xl pt-8">
-              AKARI
+              AKARIO
             </h1>
           </header>
 
@@ -47,9 +47,9 @@ export default function Home({ puzzles }: PuzzleProps) {
             <div className="flex justify-center items-center mt-6">
               {/* Introduction to Akari */}
               <p className="text-center font-mono text-lg w-9/12">
-                Welcome to AKARI!
+                Welcome to AKARIO!
                 <br /><br />
-                Akari, also known as <i>Light Up</i>, is a logic puzzle game originally created by <a className="underline" href="https://www.nikoli.co.jp/en/" target="_blank" rel="noopener noreferrer"><i>Nikoli (ニコリ)</i></a>, a Japanese publisher that specializes in creating games and logic puzzles. Nikoli became prominent around the world due to the popularity of another logic puzzle game they created, <i>Sudoku</i>.
+                Akario is a web version of Akari. Akari, also known as <i>Light Up</i>, is a logic puzzle game originally created by <a className="underline" href="https://www.nikoli.co.jp/en/" target="_blank" rel="noopener noreferrer"><i>Nikoli (ニコリ)</i></a>, a Japanese publisher that specializes in creating games and logic puzzles. Nikoli became prominent around the world due to the popularity of another logic puzzle game they created, <i>Sudoku</i>.
               </p>
             </div>
 
