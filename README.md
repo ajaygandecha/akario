@@ -46,7 +46,7 @@ Akario is still actively developed! New puzzles, modes, and features will be rel
 
 ## Credits
 Contributors:
-- [Ajay Gandecha](ajaygandecha.com)
+- [Ajay Gandecha](https://www.ajaygandecha.com)
 
 Akario is heavily based on the original logic puzzle, *Akari*, created by Nikoli:
 - [Nikoli](https://www.nikoli.co.jp/en/)
