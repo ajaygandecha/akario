@@ -74,7 +74,7 @@ export default function PuzzleBoard(props: { puzzle: Puzzle }) {
                 {/* Ensure that the game model has loaded. */}
                 {(gameModel != null) ? (
                     // Create the table container.
-                    <div className="bg-slate-400 p-2 w-10/12 sm:w-10/12 md:w-5/12 lg:w-3/12">
+                    <div className="bg-slate-400 p-2 w-11/12 sm:w-10/12 md:w-5/12 lg:w-3/12">
                         {/* Create a grid for the number of columns. */}
                         <div className={"grid gap-2"} style={{ gridTemplateColumns: gridTemplateColumnsStyle }}>
                             {(() => {
