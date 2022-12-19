@@ -10,7 +10,7 @@ export default function Footer() {
         <div>
             {/* Copyright */}
             <p className="text-center font-mono">
-                © Copyright 2022 Ajay Gandecha
+                Created by Ajay Gandecha - 2022
                 {/* Version */}
                 <span className=" float-left">
                     v0.1
